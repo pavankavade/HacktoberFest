@@ -6,10 +6,8 @@ import PostItem from "./PostItem";
 import PostForm from "./upload/PostForm";
 import { getPosts } from "../../actions/post";
 import { getCurrentProfile } from "../../actions/profile";
-import FileUpload from "./upload/FileUpload";
 
 import { useTranslation } from "react-i18next";
-import i18next from "i18next";
 const Posts = ({
   getPosts,
   post: { posts, loading },
@@ -22,9 +20,7 @@ const Posts = ({
   useEffect(() => {
     getCurrentProfile();
   }, [getCurrentProfile]);
-  function handleClick(lang) {
-    i18next.changeLanguage(lang);
-  }
+  
   const { t } = useTranslation();
   const [formData, setFormData] = useState({ search: "", select: "" });
 
@@ -36,12 +32,12 @@ const Posts = ({
   let postitem;
 
   postitem = posts.map((post) => {
-    if (select == "text") {
+    if (select ==="text") {
       if (post.text.toLowerCase().includes(search)) {
         return <PostItem key={post._id} post={post} />;
       }
     }
-    if (select == "") {
+    if (select === "") {
       if (post.text.toLowerCase().includes(search)) {
         return <PostItem key={post._id} post={post} />;
       }
