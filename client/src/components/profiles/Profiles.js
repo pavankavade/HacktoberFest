@@ -14,9 +14,7 @@ const Profiles = ({
 }) => {
   const [formData, setFormData] = useState({ search: "", select: "" });
 
-  function handleClick(lang) {
-    i18next.changeLanguage(lang);
-  }
+ 
   const { t } = useTranslation();
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -37,28 +35,28 @@ const Profiles = ({
     //let slct = profile.select;
     if (profiles.length > 0) {
       profileItems = profiles.map((profile) => {
-        if (select == "location") {
+        if (select === "location") {
           if (profile.location.toLowerCase().includes(search)) {
             return !profile.isWorker ? null : (
               <ProfileItem key={profile._id} profile={profile} />
             );
           }
         }
-        if (select == "bio") {
+        if (select === "bio") {
           if (profile.bio.toLowerCase().includes(search)) {
             return !profile.isWorker ? null : (
               <ProfileItem key={profile._id} profile={profile} />
             );
           }
         }
-        if (select == "skills") {
+        if (select === "skills") {
           if (profile.skills.toString().toLowerCase().includes(search)) {
             return !profile.isWorker ? null : (
               <ProfileItem key={profile._id} profile={profile} />
             );
           }
         }
-        if (select == "name") {
+        if (select === "name") {
           if (profile.skills.toString().toLowerCase().includes(search)) {
             return !profile.isWorker ? null : (
               <ProfileItem key={profile._id} profile={profile} />
@@ -66,7 +64,7 @@ const Profiles = ({
           }
         }
 
-        if (select == "") {
+        if (select === "") {
           if (profile.bio.toLowerCase().includes(search)) {
             return !profile.isWorker ? null : (
               <ProfileItem key={profile._id} profile={profile} />
