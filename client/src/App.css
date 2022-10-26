@@ -299,11 +299,13 @@ button {
 }
 
 /* Navbar */
-.navbar {
+.navitems{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+}
+.navbar {
+  
   align-items: center;
-  padding: 0.7rem 2rem;
   position: fixed;
   z-index: 1;
   width: 100%;
@@ -512,10 +514,7 @@ button {
   }
 
   /* Navbar */
-  .navbar {
-    display: block;
-    text-align: center;
-  }
+  
 
   .navbar ul {
     text-align: center;
