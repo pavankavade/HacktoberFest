@@ -54,7 +54,8 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       <h1>
         <Link to="/">{t("happy.1")}</Link>
       </h1>
-
+      <div className="navitems">
+        
       {!loading && (
         <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
       )}
@@ -85,6 +86,8 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         >
           {t("happy.6")}
         </a>
+      </div>
+      
       </div>
     </nav>
   );
