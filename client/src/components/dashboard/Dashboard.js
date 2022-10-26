@@ -38,7 +38,8 @@ const Dashboard = ({
     <Spinner />
   ) : (
     <Fragment>
-      <h1 className="large text-primary"> {t("dash.1")}</h1>
+      <h1 className="large text-primary"> <i className="fas fa-table" />{" "}
+          <span className="hide-sm"> {t("dash.1")}</span></h1>
       <p className="lead">
         <i className="fas fa-user" /> {t("dash.2")} {user && user.name}
       </p>
